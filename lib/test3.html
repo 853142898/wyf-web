@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>数字管网系统</title>
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="lib/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation" style="font-family: 微软雅黑">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">中国地质大学校园数字管网系统</a>
+        </div>
+    </div>
+</nav>
+
+<div id="btn_group2" class="nav nav-tabs" style="position: absolute;top:170px;left:0px">
+
+    <li class="active">
+        <a href="#layers"  class="btn btn-default btn-sm" data-toggle="tab" data-placement="right"  >
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </a>
+    </li>
+
+    <li >
+        <a href="#property"  class="btn btn-default btn-sm" data-toggle="tab" data-placement="right"  >
+            <span class="glyphicon glyphicon-th"></span>
+        </a>
+    </li>
+
+</div>
+
+<div id="myTabContent" class="tab-content">
+
+    <div id="layers" class=" tab-pane fade in active" style="position:absolute;width: 200px;top:71px;left:33px;height:300px;font-family: 微软雅黑">
+        <p>1</p>
+    </div>
+
+    <div id="property" class=" tab-pane fade" style="position:absolute;width: 200px;top:71px;left:33px;height:300px;font-family: 微软雅黑">
+        <p>2</p>
+    </div>
+
+</div>
+
+<!--<div id="property" class=" panel panel-default tab-content" style="position:absolute;display:none;width: 200px;top:71px;left:33px;height:300px;font-family: 微软雅黑">
+    <div class="panel-heading">属性查询</div>
+    <div class="panel-body">    </div>
+    <div id="property_close" style="position: inherit;top:11px;left:165px;">
+        <span class="glyphicon glyphicon-remove-sign"></span>
+    </div>
+</div>
+
+<div id="spatial" class=" panel panel-default" style="position:absolute;display:none;width: 200px;top:71px;left:33px;height:300px;font-family: 微软雅黑">
+    <div class="panel-heading">空间查询</div>
+    <div class="panel-body">    </div>
+    <div id="spatial_close" style="position: inherit;top:11px;left:165px;">
+        <span class="glyphicon glyphicon-remove-sign"></span>
+    </div>
+</div>
+
+<div id="pictures" class=" panel panel-default" style="position:absolute;z-index:2;display:none;width: 300px;top:320px;left:3px;height:260px;font-family: 微软雅黑">
+    <div class="panel-heading">地大美景
+        <div id="pictures_close" style="position: absolute;top:11px;left:265px;">
+            <span class="glyphicon glyphicon-remove-sign"></span>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div id="myCarousel"class="carousel slide" style="position:absolute;z-index:3;height: 185px; width: 270px;">
+            &lt;!&ndash; 轮播（Carousel）指标 &ndash;&gt;
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            &lt;!&ndash; 轮播（Carousel）项目 &ndash;&gt;
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="image/dida1.jpg" alt="First slide">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="item">
+                    <img src="image/dida1.jpg" alt="Second slide">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="item">
+                    <img src="image/dida1.jpg" alt="Third slide">
+                    <div class="carousel-caption"></div>
+                </div>
+            </div>
+            &lt;!&ndash; 轮播（Carousel）导航 &ndash;&gt;
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+</div>-->
+
+
+<script>
+/*    $(function () { $("[data-toggle='tooltip']").tooltip(); });//按钮提示*/
+
+   /* $('#layers_close').click(function(){  $('#layers').css('display','none');});//图层关闭
+    $('#btn_layers').click(function(){ //图层按钮
+        if(layers.style.display=="none"){
+            layers.style.display="block";
+            property.style.display="none";
+            spatial.style.display="none";
+            pictures.style.display="none";}
+        else {
+            layers.style.display="none";}
+    });
+
+    $('#property_close').click(function(){  $('#property').css('display','none');});//属性关闭
+    $('#btn_property').click(function(){ //属性查询按钮
+        if(property.style.display=="none"){
+            property.style.display="block";
+            layers.style.display="none";
+            spatial.style.display="none";
+            pictures.style.display="none";}
+        else {
+            property.style.display="none";}
+    });
+
+    $('#spatial_close').click(function(){  $('#spatial').css('display','none');});//空间查询关闭
+    $('#btn_spatial').click(function(){ //空间查询按钮
+        if(spatial.style.display=="none"){
+            spatial.style.display="block";
+            property.style.display="none";
+            layers.style.display="none";
+            pictures.style.display="none";}
+        else {
+            spatial.style.display="none";}
+    });
+
+    $('#btn_picture').click(function(){  //图片按钮
+        if(pictures.style.display=="none"){
+            pictures.style.display="block";
+            property.style.display="none";
+            layers.style.display="none";
+            spatial.style.display="none";}
+        else {
+            pictures.style.display="none";}
+    });
+    $('#pictures_close').click(function(){  $('#pictures').css('display','none');});//图片关闭
+*/
+</script>
+
+</body>
+</html>

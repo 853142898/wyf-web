@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数字管网系统</title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/ol.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/ol.css">
+
+    <style>
+        .panel-group{max-height:770px;overflow: auto;}
+        .leftMenu{margin:10px;margin-top:5px;border-color: #222}
+        .leftMenu .panel-heading{font-size:14px;padding-left:20px;height:36px;line-height:36px;color:white;position:relative;cursor:pointer;}/*转成手形图标*/
+        .leftMenu .panel-heading span{position:absolute;right:10px;top:12px;}
+        .leftMenu .menu-item-left{padding: 2px; background: transparent; border:1px solid transparent;border-radius: 6px;}
+        .leftMenu .menu-item-left:hover{background: #9a9c97;border:1px solid #222;}
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" role="navigation" style="font-family: 微软雅黑">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">中国地质大学校园数字管网系统</a>
+        </div>
+    </div>
+</nav>
+
+<div id="map" class="map" style="z-index: 0" >
+    <div id="layerControl" class="layerControl">
+        <div class="title"><label>图层列表</label></div>
+        <ul id="layerTree" class="layerTree"></ul>
+    </div>
+</div>
+
+<div class="row" style="z-index:2001; position:relative;border-color:#222">
+    <div class="col-md-2" style="position: relative;bottom:650px;left:1150px;font-family: 微软雅黑;">
+        <div class="panel-group table-responsive" role="tablist">
+            <div class="panel panel-primary leftMenu">
+                <!-- 利用data-target指定要折叠的分组列表 -->
+                <div class="panel-heading" id="collapseListGroupHeading1" data-toggle="collapse" data-target="#collapseListGroup1" role="tab"  style="background-color: #222;border-color: #222222;">
+                    <h4 class="panel-title">
+                        图层管理
+                    </h4>
+                </div>
+                <!-- .panel-collapse和.collapse标明折叠元素 .in表示要显示出来 -->
+                <div id="collapseListGroup1" class="panel-collapse collapse " role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <!-- 利用data-target指定URL -->
+                            <button class="menu-item-left"  onclick="load_layer();">图层列表
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="menu-item-left">添加图层
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="menu-item-left">删除图层
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--panel end-->
+
+            <div class="panel panel-primary leftMenu">
+                <div class="panel-heading" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab" style="background-color: #222;border-color: #222222" >
+                    <h4 class="panel-title">
+                        空间查询
+                    </h4>
+                </div>
+                <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button class="menu-item-left">拉框查询
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="menu-item-left">条件查询
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel panel-primary leftMenu">
+                <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse" data-target="#collapseListGroup3" role="tab" style="background-color: #222;border-color: #222222" >
+                    <h4 class="panel-title">
+                        图层编辑
+                    </h4>
+                </div>
+                <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button class="menu-item-left">点编辑
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="menu-item-left">线编辑
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="lib/Main.js"></script>
+</body>
+</html>

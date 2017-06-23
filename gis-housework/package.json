@@ -1,0 +1,16 @@
+{
+  "name": "gis-housework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^2.1.2",
+    "ol3-layerswitcher": "^1.1.2",
+    "webpack": "^2.6.1"
+  }
+}
